@@ -6,31 +6,32 @@ class Graph extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dontHaveToDontWantTo: '',
-      haveToWantTo: '',
-      dontHaveToWantTo: '',
-      haveToDontWantTo: ''
+      notWantNotHave: '',
+      wantHave: '',
+      wantNotHave: '',
+      haveNotWant: ''
     }
     this.handleInputs = this.handleInputs.bind(this);
   }
-  handleInputs(event, id) {
-    if (id === 'dontHaveToDontWantTo') {
+  handleInputs(event, quadrant) {
+    if (quadrant === 'notWantNotHave') {
       this.setState({
-        dontHaveToDontWantTo: event.target.value
+        notWantNotHave: event.target.value
       });
-    } else if (id === 'haveToWantTo') {
+    } else if (quadrant === 'wantHave') {
       this.setState({
-        haveToWantTo: event.target.value
+        wantHave: event.target.value
       });
-    } else if (id === 'dontHaveToWantTo') {
+    } else if (quadrant === 'wantNotHave') {
       this.setState({
-        dontHaveToWantTo: event.target.value
+        wantNotHave: event.target.value
       });
-    } else if (id === 'dontWantToHaveTo') {
+    } else if (quadrant === 'haveNotWant') {
       this.setState({
-        dontWantToHaveTo: event.target.value
+        haveNotWant: event.target.value
       });
     }
+    console.log(this.state);
   }
   render() {
     return (
@@ -45,10 +46,10 @@ class Graph extends React.Component {
             <Quadrant quadrant="haveNotWant" handleChange={this.handleInputs} />
             <Quadrant quadrant="notWantNotHave" handleChange={this.handleInputs} />
           </div>
-          <List dontHaveToDontWantTo={this.state.dontHaveToDontWantTo} 
-            haveToWantTo={this.state.haveToWantTo} 
-            dontWantToHaveTo={this.state.dontWantToHaveTo}
-            dontHaveToWantTo={this.state.dontHaveToWantTo} 
+          <List notWantNotHave={this.state.notWantNotHave} 
+            wantHave={this.state.wantHave} 
+            haveNotWant={this.state.haveNotWant}
+            wantNotHave={this.state.wantNotHave} 
             />
         </div>
       </div>
@@ -61,8 +62,8 @@ class Quadrant extends React.Component {
     super(props)
     this.handleChange = this.handleChange.bind(this);
   }
-  handleChange(event, id) {
-    this.props.handleChange(event, this.props.id);
+  handleChange(event) {
+    this.props.handleChange(event, this.props.quadrant);
   };
   render() {
     return (
@@ -82,16 +83,16 @@ class List extends React.Component {
       <div className={styles.list}>
         <h2>The List:</h2>
         <ol>
-          {this.props.dontWantToHaveTo && this.props.dontWantToHaveTo.split(',').map(function(item) {
+          {this.props.haveNotWant && this.props.haveNotWant.split(',').map(function(item) {
               return <li>{item.trim()}</li>;
           })}
-          {this.props.haveToWantTo && this.props.haveToWantTo.split(',').map(function(item) {
+          {this.props.wantHave && this.props.wantHave.split(',').map(function(item) {
               return <li>{item.trim()}</li>;
           })}
-          {this.props.dontHaveToWantTo && this.props.dontHaveToWantTo.split(',').map(function(item) {
+          {this.props.wantNotHave && this.props.wantNotHave.split(',').map(function(item) {
               return <li>{item.trim()}</li>;
           })}
-          {this.props.dontHaveToDontWantTo && this.props.dontHaveToDontWantTo.split(',').map(function(item) {
+          {this.props.notWantNotHave && this.props.notWantNotHave.split(',').map(function(item) {
               return <li>{item.trim()}</li>;
           })}
         </ol>
