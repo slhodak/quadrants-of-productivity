@@ -61,9 +61,9 @@ class Quadrant extends React.Component {
   };
   render() {
     return (
-      <div className={this.props.quadrant}>
+      <div className={styles[this.props.quadrant]}>
         <div className={styles.taskArea}>
-          <input className={styles.taskInput} onChange={this.handleChange} placeholder={this.props.id} />
+          <input className={styles.taskInput} onChange={this.handleChange} placeholder={this.props.quadrant} />
           <div className={styles.taskPool}></div>
         </div>
       </div>

@@ -6,31 +6,46 @@
   width: 50vw;
 }
 
+.quadrant {
+  margin: 10px;
+}
+
 .wantNotHave {
+  composes: quadrant;
   grid-area: wantNotHave;  
 }
 
 .notWantNotHave {
+  composes: quadrant;
   grid-area: notWantNotHave;  
 }
 
 .wantHave {
+  composes: quadrant;
   grid-area: wantHave;  
 }
 
 .haveNotWant {
+  composes: quadrant;
   grid-area: haveNotWant;  
 }
 
 .taskArea {
   height: 100px;
   width: 100%;
-  /* border: 1px solid black; */
+  border: 4px solid rgb(145, 145, 145);
+  border-radius: 9px;
 }
 
 .taskInput {
   height: 1.5rem;
   width: 100%;
   padding: 0px;
-  border: 1px solid black;
+  background-color: rgb(216, 238, 210);
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+input {
+  border-style: none;
 }
