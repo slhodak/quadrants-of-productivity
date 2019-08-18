@@ -107,18 +107,9 @@ class List extends React.Component {
   }
 };
 
-class ThreeJSContainer extends React.Component {
-  render() {
-    return(
-      <div id="container"></div>
-    );
-  }
-};
-
 ReactDOM.render(
   <div>
     <Graph />
-    <ThreeJSContainer />
   </div>, 
   document.getElementById('root')
 );
