@@ -27,7 +27,7 @@ textarea {
   padding-left: 150px;
 }
 
-#container {
+.container {
   display: flex;
   justify-content: center;
 }
