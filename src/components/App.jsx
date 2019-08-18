@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles.css';
-import Quadrant from './Quadrant';
-import List from './List';
+import Quadrant from './Quadrant.jsx';
+import List from './List.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -48,4 +48,6 @@ class App extends React.Component {
       </div>
     );
   }
-};
+}
+
+export default App;
