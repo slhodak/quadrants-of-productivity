@@ -11,9 +11,9 @@ class Graph extends React.Component {
       dontHaveToWantTo: '',
       haveToDontWantTo: ''
     }
-    this.changeShared = this.changeShared.bind(this);
+    this.handleInputs = this.handleInputs.bind(this);
   }
-  changeShared(event, id) {
+  handleInputs(event, id) {
     if (id === 'dontHaveToDontWantTo') {
       this.setState({
         dontHaveToDontWantTo: event.target.value
@@ -35,19 +35,19 @@ class Graph extends React.Component {
   render() {
     return (
       <div className={styles.container}>
-        <div id="main">
-          <h3 id="haveTo">Want to Do --></h3>
-          <section id="underMain">
+        <div class="main">
+          <h3 class="haveTo">Want to Do --></h3>
+          <section class="underMain">
             <h3>^ Have to Do <br/>|<br/>|</h3>
-            <section id="quadrants">
-              <form id="top">            
-                <Quadrant id="dontWantToHaveTo" changeMethod={this.changeShared} />
-                <Quadrant id="haveToWantTo" changeMethod={this.changeShared} />
-              </form>
-              <form id="bottom">
-                <Quadrant id="dontHaveToDontWantTo" changeMethod={this.changeShared} />
-                <Quadrant id="dontHaveToWantTo" changeMethod={this.changeShared} />
-              </form>
+            <section class="quadrants">
+              <div class="top">            
+                <Quadrant class="dontWantToHaveTo" handleChange={this.handleInputs} />
+                <Quadrant class="haveToWantTo" handleChange={this.handleInputs} />
+              </div>
+              <div class="bottom">
+                <Quadrant class="dontHaveToDontWantTo" handleChange={this.handleInputs} />
+                <Quadrant class="dontHaveToWantTo" handleChange={this.handleInputs} />
+              </div>
             </section>
           </section>
         </div>
@@ -64,16 +64,10 @@ class Graph extends React.Component {
 class Quadrant extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      input: ''
-    };
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(event, id) {
-    this.setState({
-      input: event.target.value
-    })
-    this.props.changeMethod(event, this.props.id);
+    this.props.handleChange(event, this.props.id);
   };
   render() {
     return (
@@ -83,23 +77,22 @@ class Quadrant extends React.Component {
 };
 
 class List extends React.Component {
-  // Items in list are generated from comma-separated words from quadrant component
   render() {
     return(
-      <div id="list">
+      <div class="list">
         <h2>The List:</h2>
         <ol>
-          {this.props.dontWantToHaveTo && this.props.dontWantToHaveTo.split(', ').map(function(item) {
-              return <li>{item}</li>;
+          {this.props.dontWantToHaveTo && this.props.dontWantToHaveTo.split(',').map(function(item) {
+              return <li>{item.trim()}</li>;
           })}
-          {this.props.haveToWantTo && this.props.haveToWantTo.split(', ').map(function(item) {
-              return <li>{item}</li>;
+          {this.props.haveToWantTo && this.props.haveToWantTo.split(',').map(function(item) {
+              return <li>{item.trim()}</li>;
           })}
-          {this.props.dontHaveToWantTo && this.props.dontHaveToWantTo.split(', ').map(function(item) {
-              return <li>{item}</li>;
+          {this.props.dontHaveToWantTo && this.props.dontHaveToWantTo.split(',').map(function(item) {
+              return <li>{item.trim()}</li>;
           })}
-          {this.props.dontHaveToDontWantTo && this.props.dontHaveToDontWantTo.split(', ').map(function(item) {
-              return <li>{item}</li>;
+          {this.props.dontHaveToDontWantTo && this.props.dontHaveToDontWantTo.split(',').map(function(item) {
+              return <li>{item.trim()}</li>;
           })}
         </ol>
       </div>

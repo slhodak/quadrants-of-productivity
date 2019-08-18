@@ -13,17 +13,17 @@ textarea {
   width: 18em;
 }
 
-#main {
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#underMain {
+.underMain {
   display: flex;
 }
 
-#list {
+.list {
   padding-left: 150px;
 }
 
