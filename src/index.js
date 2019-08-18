@@ -35,27 +35,17 @@ class Graph extends React.Component {
   render() {
     return (
       <div className={styles.container}>
-        <div class="main">
-          <h3 class="haveTo">Want to Do --></h3>
-          <section class="underMain">
-            <h3>^ Have to Do <br/>|<br/>|</h3>
-            <section class="quadrants">
-              <div class="top">            
-                <Quadrant class="dontWantToHaveTo" handleChange={this.handleInputs} />
-                <Quadrant class="haveToWantTo" handleChange={this.handleInputs} />
-              </div>
-              <div class="bottom">
-                <Quadrant class="dontHaveToDontWantTo" handleChange={this.handleInputs} />
-                <Quadrant class="dontHaveToWantTo" handleChange={this.handleInputs} />
-              </div>
-            </section>
-          </section>
-          <List dontHaveToDontWantTo={this.state.dontHaveToDontWantTo} 
-                haveToWantTo={this.state.haveToWantTo} 
-                dontWantToHaveTo={this.state.dontWantToHaveTo}
-                dontHaveToWantTo={this.state.dontHaveToWantTo} 
-          />
+        <div className={styles.quadrants}>
+          <Quadrant quadrant="wantHave" handleChange={this.handleInputs} />
+          <Quadrant quadrant="wantNotHave" handleChange={this.handleInputs} />
+          <Quadrant quadrant="haveNotWant" handleChange={this.handleInputs} />
+          <Quadrant quadrant="notWantNotHave" handleChange={this.handleInputs} />
         </div>
+        <List dontHaveToDontWantTo={this.state.dontHaveToDontWantTo} 
+          haveToWantTo={this.state.haveToWantTo} 
+          dontWantToHaveTo={this.state.dontWantToHaveTo}
+          dontHaveToWantTo={this.state.dontHaveToWantTo} 
+          />
       </div>
     );
   }
@@ -71,7 +61,12 @@ class Quadrant extends React.Component {
   };
   render() {
     return (
-        <textarea onChange={this.handleChange} placeholder={this.props.id} />
+      <div className={this.props.quadrant}>
+        <div className={styles.taskArea}>
+          <input className={styles.taskInput} onChange={this.handleChange} placeholder={this.props.id} />
+          <div className={styles.taskPool}></div>
+        </div>
+      </div>
     );
   }
 };
@@ -79,7 +74,7 @@ class Quadrant extends React.Component {
 class List extends React.Component {
   render() {
     return(
-      <div class="list">
+      <div className={styles.list}>
         <h2>The List:</h2>
         <ol>
           {this.props.dontWantToHaveTo && this.props.dontWantToHaveTo.split(',').map(function(item) {
