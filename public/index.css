@@ -1,0 +1,38 @@
+html {
+  background: #aff;
+  font-family: monospace;
+}
+
+h1 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+textarea {
+  height: 4em;
+  width: 18em;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#underMain {
+  display: flex;
+}
+
+#list {
+  padding-left: 150px;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  border-radius: 50%;
+  box-shadow: 0px 0px 25px #000;
+}
