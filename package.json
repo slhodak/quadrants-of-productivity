@@ -3,16 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.7.0",
+    "react": "^16.9.0",
     "react-dom": "^16.7.0",
-    "react-scripts": "2.1.3",
-    "three": "^0.100.0"
+    "react-scripts": "2.1.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "server-dev": "live-server public",
+    "react-dev": "webpack -d --watch"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -25,7 +22,14 @@
   ],
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "css-loader": "^3.2.0",
+    "style-loader": "^1.0.0",
+    "webpack-cli": "^3.3.6"
+  },
   "author": "",
   "license": "ISC"
 }
