@@ -23,10 +23,6 @@ textarea {
   display: flex;
 }
 
-.list {
-  padding-left: 150px;
-}
-
 .container {
   display: flex;
   justify-content: center;

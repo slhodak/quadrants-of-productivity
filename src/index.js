@@ -50,12 +50,12 @@ class Graph extends React.Component {
               </div>
             </section>
           </section>
+          <List dontHaveToDontWantTo={this.state.dontHaveToDontWantTo} 
+                haveToWantTo={this.state.haveToWantTo} 
+                dontWantToHaveTo={this.state.dontWantToHaveTo}
+                dontHaveToWantTo={this.state.dontHaveToWantTo} 
+          />
         </div>
-        <List dontHaveToDontWantTo={this.state.dontHaveToDontWantTo} 
-              haveToWantTo={this.state.haveToWantTo} 
-              dontWantToHaveTo={this.state.dontWantToHaveTo}
-              dontHaveToWantTo={this.state.dontHaveToWantTo} 
-        />
       </div>
     );
   }
