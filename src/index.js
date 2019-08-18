@@ -34,20 +34,23 @@ class Graph extends React.Component {
   }
   render() {
     return (
-      <div className={styles.container}>
-        <div className={styles.quadrants}>
-          <h2 className={styles.topHeader}>Have To Do -></h2>
-          <h2 className={styles.leftHeader}>Want To Do /\</h2>
-          <Quadrant quadrant="wantHave" handleChange={this.handleInputs} />
-          <Quadrant quadrant="wantNotHave" handleChange={this.handleInputs} />
-          <Quadrant quadrant="haveNotWant" handleChange={this.handleInputs} />
-          <Quadrant quadrant="notWantNotHave" handleChange={this.handleInputs} />
+      <div className={styles.all}>
+        <h1 className={styles.titleBar}>Quadrants of Productivity</h1>
+          <div className={styles.container}>
+          <div className={styles.quadrants}>
+            <h2 className={styles.topHeader}>Have To Do -></h2>
+            <h2 className={styles.leftHeader}>Want To Do /\</h2>
+            <Quadrant quadrant="wantHave" handleChange={this.handleInputs} />
+            <Quadrant quadrant="wantNotHave" handleChange={this.handleInputs} />
+            <Quadrant quadrant="haveNotWant" handleChange={this.handleInputs} />
+            <Quadrant quadrant="notWantNotHave" handleChange={this.handleInputs} />
+          </div>
+          <List dontHaveToDontWantTo={this.state.dontHaveToDontWantTo} 
+            haveToWantTo={this.state.haveToWantTo} 
+            dontWantToHaveTo={this.state.dontWantToHaveTo}
+            dontHaveToWantTo={this.state.dontHaveToWantTo} 
+            />
         </div>
-        <List dontHaveToDontWantTo={this.state.dontHaveToDontWantTo} 
-          haveToWantTo={this.state.haveToWantTo} 
-          dontWantToHaveTo={this.state.dontWantToHaveTo}
-          dontHaveToWantTo={this.state.dontHaveToWantTo} 
-          />
       </div>
     );
   }

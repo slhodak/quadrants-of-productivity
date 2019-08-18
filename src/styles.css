@@ -4,6 +4,16 @@ html {
   font-family: 'Lora', georgia;
 }
 
+.titleBar {
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 20px;
+}
+
+.container {
+  display: flex;
+}
+
 .quadrants {
   display: grid;
   grid-template-areas:
@@ -15,6 +25,7 @@ html {
 
 .quadrant {
   margin: 10px;
+  min-width: 250px;
 }
 
 .topHeader {
@@ -25,6 +36,7 @@ html {
 .leftHeader {
   display: flex;
   align-items: center;
+  min-width: 250px;
   grid-area: leftHeader;
 }
 
@@ -51,20 +63,28 @@ html {
 .taskArea {
   height: 100px;
   width: 100%;
-  border: 4px solid rgb(145, 145, 145);
+  border: 1px solid black;
+  background-color: rgb(233, 233, 233);
   border-radius: 9px;
+  margin: 1px;
 }
 
 .taskInput {
   height: 1.5rem;
   width: 100%;
   padding: 0px;
-  background-color: rgb(216, 238, 210);
-  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
   font-size: 1.2rem;
 }
 
 input {
   font-family: 'Lora', georgia;
   border-style: none;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
