@@ -7,13 +7,25 @@ html {
 .quadrants {
   display: grid;
   grid-template-areas:
-    "wantNotHave wantHave"
-    "notWantNotHave haveNotWant";
-  width: 50vw;
+    ". topHeader topHeader"
+    "leftHeader wantNotHave wantHave"
+    "leftHeader notWantNotHave haveNotWant";
+  width: 70vw;
 }
 
 .quadrant {
   margin: 10px;
+}
+
+.topHeader {
+  grid-area: topHeader;
+  text-align: center;
+}
+
+.leftHeader {
+  display: flex;
+  align-items: center;
+  grid-area: leftHeader;
 }
 
 .wantNotHave {

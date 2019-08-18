@@ -36,6 +36,8 @@ class Graph extends React.Component {
     return (
       <div className={styles.container}>
         <div className={styles.quadrants}>
+          <h2 className={styles.topHeader}>Have To Do -></h2>
+          <h2 className={styles.leftHeader}>Want To Do /\</h2>
           <Quadrant quadrant="wantHave" handleChange={this.handleInputs} />
           <Quadrant quadrant="wantNotHave" handleChange={this.handleInputs} />
           <Quadrant quadrant="haveNotWant" handleChange={this.handleInputs} />
