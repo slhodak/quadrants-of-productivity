@@ -86,7 +86,7 @@ class List extends React.Component {
   render() {
     return(
       <div className={styles.list}>
-        <h2>The List:</h2>
+        <h2>Next To Do:</h2>
         <ol>
           {this.props.haveNotWant.length ? this.props.haveNotWant.map(function(item) {
               return <li>{item}</li>;
