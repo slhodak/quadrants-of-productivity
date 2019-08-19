@@ -61,7 +61,7 @@ html {
 }
 
 .taskArea {
-  height: 100px;
+  min-height: 100px;
   width: 100%;
   border: 1px solid black;
   background-color: rgb(233, 233, 233);
@@ -89,8 +89,25 @@ input {
   align-items: center;
 }
 
+.taskPool {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .poolItem {
-  height: 10px;
-  width: 30px;
-  color: green;
+  background-color: green;
+  border-radius: 6px;
+  margin: 10px;
+}
+
+.poolItem .item {
+  padding: 5px;
+}
+
+.poolItem .delete {
+  padding: 0px 10px;
+}
+
+.poolItem .delete:hover {
+  background-color: lightgreen;
 }

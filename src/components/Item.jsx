@@ -3,10 +3,11 @@ import styles from '../styles.css';
 
 class Item extends React.Component {
   render() {
+    const { item } = this.props;
     return (
       <div className={styles.poolItem}>
-        <p>{this.props.description}</p>
-        <span onClick={this.props.delete}>x</span>
+        <span className={styles.item}>{item}</span>
+        <span className={styles.delete} onClick={this.props.delete}>x</span>
       </div>
     );
   }

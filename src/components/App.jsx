@@ -29,6 +29,7 @@ class App extends React.Component {
   insertListItem(quadName, value) {
     const quadrant = this.state.categories[quadName];
     quadrant[value] = value;
+    quadrant.size += 1;
     this.setState({
       [quadName]: quadrant
     });
