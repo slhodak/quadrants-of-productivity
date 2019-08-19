@@ -8,23 +8,25 @@ body {
   margin: 0px;
 }
 
+.all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .titleBar {
   text-align: center;
   border-bottom: 1px solid black;
   padding-bottom: 20px;
 }
 
-.container {
-  display: flex;
-}
-
 .quadrants {
   display: grid;
+  grid-template-columns: 2fr 2fr 2fr 3fr;
   grid-template-areas:
-    ". topHeader topHeader"
-    "leftHeader wantNotHave wantHave"
-    "leftHeader notWantNotHave haveNotWant";
-  width: 70vw;
+    ". topHeader topHeader list"
+    "leftHeader wantNotHave wantHave list"
+    "leftHeader notWantNotHave haveNotWant list";
 }
 
 .quadrant {
@@ -41,7 +43,6 @@ body {
 .leftHeader {
   display: flex;
   align-items: center;
-  min-width: 250px;
   grid-area: leftHeader;
 }
 
@@ -89,6 +90,7 @@ input {
 }
 
 .list {
+  grid-area: list;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,6 +146,9 @@ input {
 .instructionsContainer {
   display: flex;
   justify-content: center;
+  position: absolute;
+  top: 110px;
+  width: 80%;
 }
 
 .instructions {
@@ -152,6 +157,7 @@ input {
   max-width: 600px;
   min-width: 200px;
   border: 1px solid black;
+  background-color: white;
 }
 
 .instructions p {

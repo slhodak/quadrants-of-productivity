@@ -3,6 +3,8 @@ import styles from '../styles.css';
 import Quadrant from './Quadrant.jsx';
 import List from './List.jsx';
 import Instructions from './Instructions.jsx';
+import arrowUp from '../svg/arrowUp.js';
+import arrowRight from '../svg/arrowRight.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -63,15 +65,13 @@ class App extends React.Component {
       <div className={styles.all}>
         <h1 className={styles.titleBar}>Quadrants of Productivity</h1>
         <Instructions toggle={this.toggleInstructions} open={instructionsOpen} />
-          <div className={styles.container}>
-          <div className={styles.quadrants}>
-            <h2 className={styles.topHeader}>Have To Do -></h2>
-            <h2 className={styles.leftHeader}>Want To Do /\</h2>
-            <Quadrant quadrant="wantHave" items={categories.wantHave} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
-            <Quadrant quadrant="wantNotHave" items={categories.wantNotHave} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
-            <Quadrant quadrant="haveNotWant" items={categories.haveNotWant} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
-            <Quadrant quadrant="notWantNotHave" items={categories.notWantNotHave} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
-          </div>
+        <div className={styles.quadrants}>
+          <h2 className={styles.topHeader}>Have To Do <span className={styles.arrow}>{arrowRight}</span></h2>
+          <h2 className={styles.leftHeader}>Want To Do <span className={styles.arrow}>{arrowUp}</span></h2>
+          <Quadrant quadrant="wantHave" items={categories.wantHave} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
+          <Quadrant quadrant="wantNotHave" items={categories.wantNotHave} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
+          <Quadrant quadrant="haveNotWant" items={categories.haveNotWant} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
+          <Quadrant quadrant="notWantNotHave" items={categories.notWantNotHave} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
           <List categories={categories} deleteListItem={this.deleteListItem} />
         </div>
       </div>
