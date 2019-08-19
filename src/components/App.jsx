@@ -60,7 +60,7 @@ class App extends React.Component {
             <Quadrant quadrant="haveNotWant" items={categories.haveNotWant} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
             <Quadrant quadrant="notWantNotHave" items={categories.notWantNotHave} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
           </div>
-          <List categories={categories} />
+          <List categories={categories} deleteListItem={this.deleteListItem} />
         </div>
       </div>
     );

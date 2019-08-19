@@ -7,9 +7,10 @@ class ListItem extends React.Component {
     const { item, quadrant } = this.props;
     return (
       <li>
-        <div className={styles.ListItem}>
-          <span>{item}</span>
-          <span onClick={() => {
+        <div className={styles.listItem}>
+          <span className={styles.item}>{item}</span>
+          <span className={styles.complete}
+            onClick={() => {
             this.props.delete(quadrant, item)
           }}>{checkbox}</span>
         </div>
