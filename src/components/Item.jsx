@@ -2,21 +2,11 @@ import React from 'react';
 import styles from '../styles.css';
 
 class Item extends React.Component {
-  constructor(props) {
-    super(props);
-  
-    this.delete = this.delete.bind(this);
-  }
-
-  delete() {
-    
-  }
-
   render() {
     return (
-      <div className={styles.item}>
+      <div className={styles.poolItem}>
         <p>{this.props.description}</p>
-        <span onClick={this.delete}>x</span>
+        <span onClick={this.props.delete}>x</span>
       </div>
     );
   }

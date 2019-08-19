@@ -3,20 +3,29 @@ import styles from '../styles.css';
 
 class List extends React.Component {
   render() {
+    let categories = {};
+    for (let cat in this.props.categories) {
+      categories[cat] = [];
+      for (let list in this.props.categories[cat]) {
+        if (list !== 'size') {
+          categories[cat].push(list);
+        }
+      }
+    }
     return(
       <div className={styles.list}>
         <h2>Next To Do:</h2>
         <ol>
-          {this.props.haveNotWant.length ? this.props.haveNotWant.map(function(item) {
+          {categories.haveNotWant.length ? categories.haveNotWant.map(function(item) {
               return <li>{item}</li>;
           }) : null}
-          {this.props.wantHave.length ? this.props.wantHave.map(function(item) {
+          {categories.wantHave.length ? categories.wantHave.map(function(item) {
               return <li>{item}</li>;
           }) : null}
-          {this.props.wantNotHave.length ? this.props.wantNotHave.map(function(item) {
+          {categories.wantNotHave.length ? categories.wantNotHave.map(function(item) {
               return <li>{item}</li>;
           }) : null}
-          {this.props.notWantNotHave.length ? this.props.notWantNotHave.map(function(item) {
+          {categories.notWantNotHave.length ? categories.notWantNotHave.map(function(item) {
               return <li>{item}</li>;
           }) : null}
         </ol>

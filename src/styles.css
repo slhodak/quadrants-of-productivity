@@ -88,3 +88,9 @@ input {
   flex-direction: column;
   align-items: center;
 }
+
+.poolItem {
+  height: 10px;
+  width: 30px;
+  color: green;
+}
