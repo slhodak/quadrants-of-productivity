@@ -14,7 +14,7 @@ class App extends React.Component {
         wantNotHave: { size: 0 },
         haveNotWant: { size: 0 }
       },
-      instructionsOpen: true
+      instructionsOpen: false
     }
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.insertListItem = this.insertListItem.bind(this);
@@ -62,6 +62,7 @@ class App extends React.Component {
     return (
       <div className={styles.all}>
         <h1 className={styles.titleBar}>Quadrants of Productivity</h1>
+        <Instructions toggle={this.toggleInstructions} open={instructionsOpen} />
           <div className={styles.container}>
           <div className={styles.quadrants}>
             <h2 className={styles.topHeader}>Have To Do -></h2>
@@ -73,7 +74,6 @@ class App extends React.Component {
           </div>
           <List categories={categories} deleteListItem={this.deleteListItem} />
         </div>
-        <Instructions toggle={this.toggleInstructions} open={instructionsOpen} />
       </div>
     );
   }
