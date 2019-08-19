@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../styles.css';
-import Item from './Item.jsx';
+import PoolItem from './PoolItem.jsx';
 
 class Quadrant extends React.Component {
   constructor(props) {
@@ -35,7 +35,7 @@ class Quadrant extends React.Component {
             {items.size ? itemList.map(item => {
               if (item !== 'size') {
                 console.log('inserting item to pool');
-                return <Item item={item} quadrant={quadrant} delete={this.props.deleteListItem} />
+                return <PoolItem item={item} quadrant={quadrant} delete={this.props.deleteListItem} />
               } else {
                 return null;
               }

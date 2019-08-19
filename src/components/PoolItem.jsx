@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles.css';
 
-class Item extends React.Component {
+class PoolItem extends React.Component {
   render() {
     const { item } = this.props;
     return (
@@ -18,4 +18,4 @@ class Item extends React.Component {
   }
 }
 
-export default Item;
+export default PoolItem;
