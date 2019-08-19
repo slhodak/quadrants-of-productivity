@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../styles.css';
 import Quadrant from './Quadrant.jsx';
 import List from './List.jsx';
+import Instructions from './Instructions.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,11 +13,13 @@ class App extends React.Component {
         wantHave: { size: 0 },
         wantNotHave: { size: 0 },
         haveNotWant: { size: 0 }
-      }
+      },
+      instructionsOpen: true
     }
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.insertListItem = this.insertListItem.bind(this);
     this.deleteListItem = this.deleteListItem.bind(this);
+    this.toggleInstructions = this.toggleInstructions.bind(this);
   }
 
   handleKeyDown(event, quadName) {
@@ -45,8 +48,16 @@ class App extends React.Component {
     });
   }
 
+  toggleInstructions() {
+    let { instructionsOpen } = this.state;
+    instructionsOpen = !instructionsOpen;
+    this.setState({
+      instructionsOpen
+    });
+  }
+
   render() {
-    const { categories } = this.state;
+    const { categories, instructionsOpen } = this.state;
     console.log(categories);
     return (
       <div className={styles.all}>
@@ -62,6 +73,7 @@ class App extends React.Component {
           </div>
           <List categories={categories} deleteListItem={this.deleteListItem} />
         </div>
+        <Instructions toggle={this.toggleInstructions} open={instructionsOpen} />
       </div>
     );
   }

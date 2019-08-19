@@ -4,6 +4,10 @@ html {
   font-family: 'Lora', georgia;
 }
 
+body {
+  margin: 0px;
+}
+
 .titleBar {
   text-align: center;
   border-bottom: 1px solid black;
@@ -135,4 +139,15 @@ input {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   cursor: pointer;
+}
+
+.instructions {
+  width: 50%;
+  max-width: 600px;
+  min-width: 200px;
+  border: 1px solid black;
+}
+
+.instructions p {
+  margin: 0px 0px 5px 0px;
 }
