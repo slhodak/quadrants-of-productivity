@@ -7,7 +7,12 @@ class Item extends React.Component {
     return (
       <div className={styles.poolItem}>
         <span className={styles.item}>{item}</span>
-        <span className={styles.delete} onClick={this.props.delete}>x</span>
+        <span className={styles.delete} 
+              onClick={() => {
+                this.props.delete(this.props.quadrant, item)
+              }}>
+          x
+        </span>
       </div>
     );
   }

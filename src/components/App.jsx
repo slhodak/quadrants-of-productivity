@@ -31,12 +31,18 @@ class App extends React.Component {
     quadrant[value] = value;
     quadrant.size += 1;
     this.setState({
-      [quadName]: quadrant
+      quadrant
     });
   }
 
-  deleteListItem(event, quadrant, name) {
-    
+  deleteListItem(quadName, value) {
+    const quadrant = this.state.categories[quadName];
+    console.log('quadrnt', quadrant);
+    delete quadrant[value];
+    quadrant.size -= 1;
+    this.setState({
+      quadrant
+    });
   }
 
   render() {
@@ -49,10 +55,10 @@ class App extends React.Component {
           <div className={styles.quadrants}>
             <h2 className={styles.topHeader}>Have To Do -></h2>
             <h2 className={styles.leftHeader}>Want To Do /\</h2>
-            <Quadrant quadrant="wantHave" items={categories.wantHave} handleKeyDown={this.handleKeyDown} />
-            <Quadrant quadrant="wantNotHave" items={categories.wantNotHave} handleKeyDown={this.handleKeyDown} />
-            <Quadrant quadrant="haveNotWant" items={categories.haveNotWant} handleKeyDown={this.handleKeyDown} />
-            <Quadrant quadrant="notWantNotHave" items={categories.notWantNotHave} handleKeyDown={this.handleKeyDown} />
+            <Quadrant quadrant="wantHave" items={categories.wantHave} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
+            <Quadrant quadrant="wantNotHave" items={categories.wantNotHave} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
+            <Quadrant quadrant="haveNotWant" items={categories.haveNotWant} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
+            <Quadrant quadrant="notWantNotHave" items={categories.notWantNotHave} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
           </div>
           <List categories={categories} />
         </div>

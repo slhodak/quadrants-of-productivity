@@ -35,7 +35,7 @@ class Quadrant extends React.Component {
             {items.size ? itemList.map(item => {
               if (item !== 'size') {
                 console.log('inserting item to pool');
-                return <Item item={item}/>
+                return <Item item={item} quadrant={quadrant} delete={this.props.deleteListItem} />
               } else {
                 return null;
               }
