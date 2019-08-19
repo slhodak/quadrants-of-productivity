@@ -26,6 +26,7 @@ html {
 .quadrant {
   margin: 10px;
   min-width: 250px;
+  max-width: 500px;
 }
 
 .topHeader {
@@ -87,6 +88,25 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+}
+
+.listItem .item {
+  padding: 10px;
+}
+
+.listItem .complete {
+  height: 100%;
+  padding: 10px;
+  transform: translateY(4px);
+}
+
+.listItem .complete:hover svg {
+  fill: green;
 }
 
 .taskPool {
