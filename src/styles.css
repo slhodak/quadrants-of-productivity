@@ -174,3 +174,7 @@ input {
 .instructionsEmpty {
   composes: instructions;
 }
+
+.arrow svg{
+  height: 12px;
+}
