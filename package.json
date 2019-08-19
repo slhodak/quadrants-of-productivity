@@ -9,7 +9,8 @@
   },
   "scripts": {
     "server-dev": "live-server public",
-    "react-dev": "webpack -d --watch"
+    "react-dev": "webpack -d --watch",
+    "build": "webpack -d"
   },
   "eslintConfig": {
     "extends": "react-app"
