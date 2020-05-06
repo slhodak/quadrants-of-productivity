@@ -1,14 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
 
-html {
-  font-family: 'Lora', georgia;
-}
-
 body {
   margin: 0px;
 }
 
 .all {
+  font-family: 'Lora', georgia;
   display: flex;
   flex-direction: column;
   align-items: center;

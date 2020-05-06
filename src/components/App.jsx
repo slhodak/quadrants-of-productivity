@@ -63,8 +63,8 @@ class App extends React.Component {
     console.log(categories);
     return (
       <div className={styles.all}>
-        <h1 className={styles.titleBar}>Quadrants of Productivity</h1>
-        <Instructions toggle={this.toggleInstructions} open={instructionsOpen} />
+        {/*<h1 className={styles.titleBar}>Quadrants of Productivity</h1>*/}
+        {/*<Instructions toggle={this.toggleInstructions} open={instructionsOpen} />*/}
         <div className={styles.quadrants}>
           <h2 className={styles.topHeader}>Have To Do <span className={styles.arrow}>{arrowRight}</span></h2>
           <h2 className={styles.leftHeader}>Want To Do <span className={styles.arrow}>{arrowUp}</span></h2>
