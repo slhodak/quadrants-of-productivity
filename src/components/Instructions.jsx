@@ -5,8 +5,7 @@ import arrowDown from '../svg/arrowDown.js';
 
 export default (props) => {
   return (
-    <div className={styles.instructionsContainer}>
-      <button className={styles.toggle} onClick={props.toggle}>{props.open ? 'Close' : 'Open'}</button>
+    <div className={styles.instructionsContainer} onClick={props.toggle}>
       {props.open
         ? <div className={styles.instructions}>
             <p>Instructions<span className={styles.arrow}>{arrowUp}</span></p>

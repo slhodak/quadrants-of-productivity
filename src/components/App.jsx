@@ -63,17 +63,14 @@ class App extends React.Component {
     console.log(categories);
     return (
       <div className={styles.all}>
-        {/*<h1 className={styles.titleBar}>Quadrants of Productivity</h1>*/}
-        {/*<Instructions toggle={this.toggleInstructions} open={instructionsOpen} />*/}
+        <Instructions toggle={this.toggleInstructions} open={instructionsOpen} />
         <div className={styles.quadrants}>
-          <h2 className={styles.topHeader}>Have To Do <span className={styles.arrow}>{arrowRight}</span></h2>
-          <h2 className={styles.leftHeader}>Want To Do <span className={styles.arrow}>{arrowUp}</span></h2>
           <Quadrant quadrant="wantHave" items={categories.wantHave} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
           <Quadrant quadrant="wantNotHave" items={categories.wantNotHave} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
           <Quadrant quadrant="haveNotWant" items={categories.haveNotWant} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
           <Quadrant quadrant="notWantNotHave" items={categories.notWantNotHave} handleKeyDown={this.handleKeyDown} deleteListItem={this.deleteListItem} />
-          <List categories={categories} deleteListItem={this.deleteListItem} />
         </div>
+          <List categories={categories} deleteListItem={this.deleteListItem} />
       </div>
     );
   }

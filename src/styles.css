@@ -27,7 +27,7 @@ body {
 }
 
 .quadrant {
-  margin: 10px;
+  margin: 5px;
   min-width: 250px;
   max-width: 500px;
 }
@@ -143,13 +143,10 @@ input {
 .instructionsContainer {
   display: flex;
   justify-content: center;
-  position: absolute;
-  top: 110px;
-  width: 80%;
+  cursor: pointer;
 }
 
 .instructions {
-  width: 50%;
   padding: 0px 5px;
   max-width: 600px;
   min-width: 200px;
