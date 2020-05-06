@@ -10,7 +10,8 @@
   "scripts": {
     "server-dev": "live-server public",
     "react-dev": "webpack -d --watch",
-    "build": "webpack -d"
+    "build": "webpack -d",
+    "deploy-to-parent": "npm run build && cp public/bundle.js ../public/quadrants.js"
   },
   "eslintConfig": {
     "extends": "react-app"
